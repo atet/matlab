@@ -1,4 +1,4 @@
-# [atet](https://github.com/atet) / [learn](https://github.com/atet/learn/blob/master/README.md#atet--learn) / [**_matlab_**](https://github.com/atet/learn/blob/master/matlab/README.md#atet--learn--matlab)
+# [atet](https://github.com/atet) / [**_matlab_**](https://github.com/atet/matlab/blob/master/README.md#atet--matlab)
 
 [![.img/logo_matlab_gnu_octave.png](.img/logo_matlab_gnu_octave.png)](#nolink)
 
