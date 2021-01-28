@@ -11,6 +11,8 @@
 
 --------------------------------------------------------------------------------------------------
 
+<a name="table-of-contents"></a>
+
 ## Table of Contents
 
 ### Introduction
@@ -32,6 +34,8 @@
 
 --------------------------------------------------------------------------------------------------
 
+<a name="0-requirements"></a>
+
 ## 0. Requirements
 
 * **No prior programming experience necessary for this tutorial**
@@ -40,6 +44,8 @@
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
+
+<a name="1-preface"></a>
 
 ## 1. Preface
 
@@ -51,6 +57,8 @@
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
+
+<a name="2-environment"></a>
 
 ## 2. Environment
 
@@ -73,6 +81,8 @@
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
+
+<a name="3-variables"></a>
 
 ## 3. Variables
 
@@ -117,6 +127,8 @@ disp(var)
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
+
+<a name="4-operators"></a>
 
 ## 4. Operators
 
@@ -212,6 +224,8 @@ num1 ~= num2
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
+
+<a name="5-data-structures"></a>
 
 ## 5. Data Structures
 
@@ -309,6 +323,8 @@ disp([1:10])
 
 --------------------------------------------------------------------------------------------------
 
+<a name="6-control-structures"></a>
+
 ## 6. Control Structures
 
 **Earlier, we've used Booleans for comparisons; now let's use them to control what code will run**
@@ -390,8 +406,8 @@ disp('Loop Done!')
 #### Loops with repetitive tasks
 
 * Computers work blazingly fast to our benefit; running the above loop finishes instantaneously
-* Let's see if we can push the limits by figuring out if `216,091` is a prime number (divisible only by 1 and itself)
-* We can do this by looping through integers `2` through `108,046` (about half of `216,091`) and seeing if any of them divide cleanly without any remainder
+* Let's see if we can push the limits by figuring out if `997` is a prime number (divisible only by 1 and itself)
+* We can do this by looping through integers `2` through `499` (about half of `997`) and seeing if any of them divide cleanly without any remainder
    * Note: We will use the modulus mathematical function "`mod()`" that will calculate any remainder from a division, e.g. `mod(4, 2) = 0` while `mod(5, 2) = 1`
 
 ```r
@@ -418,6 +434,8 @@ end
 
 --------------------------------------------------------------------------------------------------
 
+<a name="7-epilogue"></a>
+
 ## 7. Epilogue
 
 * We have reviewed the critical building blocks needed for a strong foundation of computer science theory
@@ -430,6 +448,8 @@ end
 
 --------------------------------------------------------------------------------------------------
 
+<a name="8-next-steps"></a>
+
 ## 8. Next Steps
 
 * I recommend going over this material one more time to solidify these concepts
@@ -441,6 +461,8 @@ end
 
 --------------------------------------------------------------------------------------------------
 
+<a name="other-languages"></a>
+
 ## Other Languages
 
 * Regardless of the difference in [syntax](https://www.google.com/search?q=syntax&oq=syntax) between languages, they will all share a common theory of how things work
@@ -449,11 +471,11 @@ end
 
 ### **MATLAB**
 
-> The words "`Hello World!`" are assigned to the variable `greeting` and then "printed" out
+> The words "`Hello World!`" are assigned to the variable `greeting` and then "displayed"
 >
 > ```
 > >> greeting = 'Hello World!'
-> >> fprintf(greeting)
+> >> disp(greeting)
 > Hello World!
 > ```
 
@@ -480,6 +502,8 @@ end
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
+
+<a name="acknowledgments"></a>
 
 ## Acknowledgments
 
