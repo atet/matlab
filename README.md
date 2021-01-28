@@ -68,7 +68,7 @@
 * Now let's **watch the following animation** to see this all in action:
    * Note: Every section has animated figures to help you with abstract concepts and guide you with coding
 
-[![.img/step02a.gif](.img/step02a.gif)](#nolink)
+[![.img/step01.gif](.img/step01.gif)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -84,7 +84,7 @@
 
 > _We know that the variable `a` should be 50, but we would've had to calculate that from `a = h × w`_
 >
-> [![.img/step03a.png](.img/step03a.png)](#nolink)
+> [![.img/step02.png](.img/step02.png)](#nolink)
 
 * Unlike the algebra homework in the previous example, there are helpful differences in computer programming:
    * The computer will handle remembering what values each variable is assigned and performing any calculations
@@ -92,12 +92,12 @@
 
 > _Once you tell the computer that `area = height × width`, the variable `area` is assigned the automatically computed value of 50_
 >
-> [![.img/step03b.png](.img/step03b.png)](#nolink)
+> [![.img/step03.png](.img/step03.png)](#nolink)
 
 * If you were to re-write the above computation line-by-line in the **Command Prompt**, you will see that Octave will automatically compute `height` multiplied by `width` for you when you print `area`:
    * Note: The multiplication symbol in programming is the asterisk "`*`" (SHIFT+8)
 
-[![.img/step03c.gif](.img/step03c.gif)](#nolink)
+[![.img/step04.gif](.img/step04.gif)](#nolink)
 
 ### **Simple Variable Types**
 
@@ -112,7 +112,7 @@ var = 'Hello World!'
 disp(var)
 ```
 
-[![.img/step03d.gif](.img/step03d.gif)](#nolink)
+[![.img/step05.gif](.img/step05.gif)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -123,9 +123,7 @@ disp(var)
 ### **Basic Operators**
 
 * We touched a bit on operators in the previous section by using the assignment and multiplication operator
-   * **Assignment operator**: Assigns a value to a variable
-      * Note: You can use either "`=`" or "`<-`" in R for assignment
-   * **Mathematical operators**:
+* **Mathematical operators**:
 
 Operator | Definition
 --- | ---
@@ -144,7 +142,7 @@ num2 = 50
 disp(num1 - num2)
 ```
 
-[![.img/step04a.gif](.img/step04a.gif)](#nolink)
+[![.img/step06.gif](.img/step06.gif)](#nolink)
 
 ### **Relational Operators**
 
@@ -171,7 +169,7 @@ num1 == num2
 num1 ~= num2
 ```
 
-[![.img/step04b.gif](.img/step04b.gif)](#nolink)
+[![.img/step07.gif](.img/step07.gif)](#nolink)
 
 ### **Logical Operators**
 
@@ -185,11 +183,13 @@ Operator | Definition
 ```matlab
 true && true
 true && false
+false && false
 true || true
 true || false
+false || false
 ```
 
-[![.img/step04c.gif](.img/step04c.gif)](#nolink)
+[![.img/step08.gif](.img/step08.gif)](#nolink)
 
 * We saw in the `~=` ("not equal to") relationship operator that the "`~`" means "not" a.k.a. "give me the opposite"
 * Remember that the relationship operators will give Boolean results and those can be used with these logical operators
@@ -207,7 +207,7 @@ num1 ~= num2
 ~(num1 ~= num2)
 ```
 
-[![.img/step04d.gif](.img/step04d.gif)](#nolink)
+[![.img/step09.gif](.img/step09.gif)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -217,98 +217,93 @@ num1 ~= num2
 
 **Earlier, we've seen simple number and string data types being stored in variables; now let's look at more complex data structures**
 
-### **Vector**
+### **Array**
 
 * A variable can also represent a larger body of data
-* You can group many individual pieces of data into a **vector** using `[]` and even reference individual pieces by index number using square brackets `()`:
+* You can group many individual pieces of data into an **array** using square brackets `[]` and even reference individual indices by number using parenthesis `()`:
    * Note: Index numbers start from 1 in MATLAB
 
 ```matlab
-vec = [7 8 9]
-disp(vec)
-disp(vec(1))
-disp(vec(3))
+arr = [7 8 9]
+disp(arr)
+disp(arr(1))
+disp(arr(3))
 ```
-[![.img/step05a.gif](.img/step05a.gif)](#nolink)
+[![.img/step10.gif](.img/step10.gif)](#nolink)
 
-[![.img/step05b.gif](.img/step05b.gif)](#nolink)
+[![.img/step11.gif](.img/step11.gif)](#nolink)
 
-### **Building a Vector**
+### **Building an Array**
 
-* We can easily add new data into a vector by including the previous vector in the new vector
-* Let's add some numbers in front of and at the end of an existing vector:
+* We can easily add new data into an array by including the previous array in the new array
+* Let's add some numbers in front of and at the end of an existing array:
 
 ```matlab
-vec = [2 3]
-disp(vec)
-vec = [1 vec]
-disp(vec)
-vec = [vec 4]
-disp(vec)
+arr = [2 3]
+disp(arr)
+arr = [1 arr]
+disp(arr)
+arr = [arr 4]
+disp(arr)
 ```
 
-[![.img/step05c.gif](.img/step05c.gif)](#nolink)
+[![.img/step12.gif](.img/step12.gif)](#nolink)
 
 ---
 
-# TODO: Stopped here, need to merge R's Named Vector and List sections to MATLAB Structure Array
+### **Structures**
 
----
+* An array of numbers doesn't sound too exciting, how about Twitter tweets?
+* Since there's a bit more complicated data with tweets, we can use structures or `struct`s to give each index a name:
 
-### **Named Vector**
-
-* A vector of numbers doesn't sound too exciting, how about Twitter tweets?
-* Since there's a bit more complicated data with tweets, we can extend vectors to giving each index a name (can still reference by number):
-   * Note: Try running the first half on the script side and the remainder on the console side
-
-```r
-tweet1 = c("user" = "atet",
-           "time" = "8:15 AM",
-           "text" = "Hello!")
-print(tweet1)
-print(tweet1["user"])
-print(tweet1[1])
+```matlab
+tweet1 = struct(
+   'user', 'atet',
+   'time', '8:15 AM',
+   'text', 'Hello!')
+disp(tweet1)
+disp(tweet1.user)
 ```
 
-[![.img/step05d.gif](.img/step05d.gif)](#nolink)
+[![.img/step13.gif](.img/step13.gif)](#nolink)
 
-### **List**
+### **Array of Structures**
 
-* What if we need to store a collection of complex variables types?
-* Unfortunately, vectors cannot store other vectors as seen in the Building a Vector section
-* **Lists** can store vectors by placing vectors between the parentheses of "`list()`"
-* Below, we will build a list of two named vectors and reference indices by name and number:
-   * Note: You must use double square brackets with **lists** and single brackets with vectors
+* What if we need to store a collection of these complex structures?
+* Fortunately, **Arrays** can store other arrays or even `struct`s
+* Below, we will build an array of two `struct`s and reference array indices by numbers and the `struct` indices by name:
 
-```r
-tweet1 = c("user" = "atet",
-           "time" = "8:15 AM",
-           "text" = "Hello!")
-tweet2 = c("user" = "atet",
-           "time" = "8:16 AM",
-           "text" = "World!")
-tweets = list(tweet1, tweet2)
-print(tweets[[1]])
-print(tweets[[2]])
-print(tweets[[1]]["text"])
-print(tweets[[2]][3])
+```matlab
+tweet1 = struct(
+   'user', 'atet',
+   'time', '8:15 AM',
+   'text', 'Hello!')
+tweet2 = struct(
+   'user', 'atet',
+   'time', '8:16 AM',
+   'text', 'World!!')
+tweets = [tweet1 tweet2]
+disp(tweets(1))
+disp(tweets(2))
+disp(tweets(1).text)
+disp(tweets(2).text)
 ```
 
-[![.img/step05e.gif](.img/step05e.gif)](#nolink)
+[![.img/step14.gif](.img/step14.gif)](#nolink)
 
-[![.img/step05f.gif](.img/step05f.gif)](#nolink)
+[![.img/step15.gif](.img/step15.gif)](#nolink)
 
 ### **Data Range**
 
-* R has some handy shortcuts to help when dealing with ranges of numbers
-* If we had to make an ordered vector of numbers from 1 to 10 (_or a billion!_), we could use the special colon ("`:`") operator to help:
+* MATLAB has some handy shortcuts to help when dealing with ranges of numbers
+* If we had to make an ordered array of numbers from 1 to 10 (_or a billion!_), we could use the special colon ("`:`") operator to help:
 
-```r
-print(c(1,2,3,4,5,6,7,8,9,10))
-print(c(1:10))
+```matlab
+disp([1 2 3 4 5 6 7 8 9 10])
+disp([1:10])
 ```
 
-[![.img/step05g.gif](.img/step05g.gif)](#nolink)
+[![.img/step16.gif](.img/step16.gif)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -321,46 +316,48 @@ print(c(1:10))
 ### **Conditional Statements**
 
 * Booleans can also control what code will run in conditional statements
-* The example below shows an "`if`" conditional statement that executes only when the result within the `if()`'s parenthesis is `TRUE`:
-   * Note: You must use curly brackets ("`{}`") to surround the code that will run with a `TRUE` `if` statement
+* The example below shows an "`if`" conditional statement that executes only when the result after the `if` is `true`:
+   * Note: You must end the `if` statement with an `end`
+   * Note: Since MATLAB uses single quotes "`'`" to surround strings, you must escape single quotes with another single quote if they are used in the string
 
-```r
+```matlab
 tweet_count = 5
 
-if(tweet_count > 10){
-   print("That's a lot of tweets!")
-}
+if tweet_count > 10
+   disp('That''s a lot of tweets!')
+end
 
 tweet_count = tweet_count + 100
 
-if(tweet_count > 50){
-   print("Too many tweets!")
-}
+if tweet_count > 50
+   disp('Too many tweets!')
+end
 ```
 
-* If we run the above code, we will see that only the second `if` statement executes ("`Too many tweets!`") since its condition was satisfied (`tweet_count` of 150 is greater than 50)
-* We can use "`else`" statements in conjunction, which execute only when the `if` condition is **not** satisfied
+* If we run the above code, we will see that only the second `if` statement executes ("`Too many tweets!`") since its condition was satisfied (`tweet_count` of 105 is greater than 50)
+* We can use an "`else`" statement in conjunction, which execute only when the `if` condition is **not** satisfied
 
-```r
+```matlab
 tweet_count = 7
 
-if(tweet_count > 10){
-   print("That's a lot of tweets!")
-}else{
-   print("Get more tweets!")
-}
+if tweet_count > 10
+   disp('That''s a lot of tweets!')
+else
+   disp('Get more tweets!')
+end
 ```
 
 * These examples seem to be pretty benign, but maybe you'll have to use these control structures for something important one day:
 
-```r
+```matlab
 ants = 1000
-if(ants > 900){
-   print("Start exterminator program...")
-}
+
+if ants > 900
+   disp('Start exterminator program...')
+end
 ```
 
-[![.img/step06a.gif](.img/step06a.gif)](#nolink)
+[![.img/step17.gif](.img/step17.gif)](#nolink)
 
 ### **Loops**
 
@@ -373,61 +370,49 @@ if(ants > 900){
 2. Condition - A condition that must be satisfied to continue the loop
 3. Body - Code that will execute if the condition remains TRUE
 
-[![.img/step06b.png](.img/step06b.png)](#nolink)
+[![.img/step18.png](.img/step18.png)](#nolink)
 
 * If we run the loop below, we see that the variable `this_index` continues to increment every loop iteration until it is no longer less than `last_index` and "`break`s" out of the loop
-* As the loop iterates, `this_index` increments and is used to print out different indices from the vector `words`
+* As the loop iterates, `this_index` increments and is used to print out different cells from the cell array `words`:
+   * Note: For more information about using cell arrays for strings [click here](https://octave.org/doc/v4.2.2/Cell-Arrays-of-Strings.html)
 
-```r
-words = c("Hello", "World", "!")
+```matlab
+words = ['Hello'; 'World'; '!']
 this_index = 1
 last_index = 3
-repeat{
-   if(this_index > last_index){
-      break
-   }
-   print(words[this_index])
+while this_index <= last_index
+   disp(words(this_index,:))
    this_index = this_index + 1
-}
-print("Loop Done!")
+end
+disp('Loop Done!')
 ```
-
-[![.img/step06d.gif](.img/step06d.gif)](#nolink)
-
-#### Loop concept
-
-* Sometimes it helps to visualize what a loop is doing step-by-step
-* The animation below shows what we just ran with the code above
-   * Note: [Click here to see the loop animation frame-by-frame](https://github.com/atet/learn/blob/master/programming/.img/step06c/README.md#atet--learn--programming)
-
-[![.img/step06c.gif](.img/step06c.gif)](#nolink)
 
 #### Loops with repetitive tasks
 
 * Computers work blazingly fast to our benefit; running the above loop finishes instantaneously
-* Let's see if we can push the limits by figuring out if 216,091 is a prime number (divisible only by 1 and itself)
-* We can do this by looping through integers 2 through 108,046 (about half of 216,091) and seeing if any of them divide cleanly without any remainder
-   * Note: We will use the modulus mathematical operator "`%%`" that will calculate any remainder from a division, e.g. `4 %% 2 = 0` while `5 %% 2 = 1`
+* Let's see if we can push the limits by figuring out if `216,091` is a prime number (divisible only by 1 and itself)
+* We can do this by looping through integers `2` through `108,046` (about half of `216,091`) and seeing if any of them divide cleanly without any remainder
+   * Note: We will use the modulus mathematical function "`mod()`" that will calculate any remainder from a division, e.g. `mod(4, 2) = 0` while `mod(5, 2) = 1`
 
 ```r
-dividend = 216091
+dividend = 997
 divisor = 2
-repeat{
-   if(divisor > (dividend/2)){
-      print("I am a prime!!!")
+while true
+   if divisor > (dividend / 2)
+      disp('I am a prime!!!')
       break
-   }
-   if((dividend %% divisor) == 0){
-      print("I am not a prime.")
+   end
+   if mod(dividend, divisor) == 0
+      disp('I am not a prime.')
       break
-   }
+   end
    divisor = divisor + 1
-}
+end
 ```
 
-[![.img/step06e.gif](.img/step06e.gif)](#nolink)
+[![.img/step19.gif](.img/step19.gif)](#nolink)
 
-**Holy cow that was quick!** I don't know about you, but I wouldn't have wanted to perform 100,000+ divisions even _with_ a calculator
+**Holy cow that was quick!** I don't know about you, but I wouldn't have wanted to perform ~500 divisions even _with_ a calculator
 
 [Back to Top](#table-of-contents)
 
@@ -506,4 +491,4 @@ repeat{
 
 --------------------------------------------------------------------------------------------------
 
-<p align="center">Copyright © 2019-∞ Athit Kao, <a href="http://www.athitkao.com/tos.html" target="_blank">Terms and Conditions</a></p>
+<p align="center">Copyright © 2020-∞ Athit Kao, <a href="http://www.athitkao.com/tos.html" target="_blank">Terms and Conditions</a></p>
